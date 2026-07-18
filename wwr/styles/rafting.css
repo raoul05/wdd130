@@ -75,9 +75,9 @@ h1 {
     /* white text - make sure there is enough contrast with the background-color */
 }
 
-article {
-    background-color: var(--secondary-color);
+.hero article {
     position: absolute;
+    background-color: var(--secondary-color);
     padding: 20px;
     margin: 20px;
     top: 100px;
