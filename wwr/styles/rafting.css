@@ -47,6 +47,7 @@ section,
 article {
     margin: 16px;
     padding: 8px;
+
 }
 
 .socialmedia a {
@@ -75,7 +76,7 @@ h1 {
 }
 
 article {
-    background-color: var(--accent2-color);
+    background-color: var(--secondary-color);
     position: absolute;
     padding: 20px;
     margin: 20px;
