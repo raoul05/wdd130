@@ -4,20 +4,34 @@
     box-sizing: border-box;
 }
 
+body {
+    display: block;
+    margin: 8px;
+}
+
 nav {
     background-color: steelblue;
-    padding: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
 nav a {
-    color: white;
     display: block;
-    padding: 10px;
+    color: #fff;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 h1 {
     color: steelblue;
     padding: .5rem;
+    margin: 10px;
+    border-bottom: 2px solid gray;
 }
 
 img {
@@ -32,19 +46,31 @@ p {
     padding: 0;
 }
 
-main {
-    max-width: 640px;
+ul {
+    text-decoration: none;
+    background-color: #ddd;
+    border: 1px solid rgb(0 0 0 / 100);
+    margin: 8px;
+    padding: 20px;
+    display: block;
+
+}
+
+.grid {
+    display: grid;
+    align-items: center;
 }
 
 aside {
     width: 20em;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
     position: relative;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+main {
+    grid-column: 2/3;
+    margin: 1rem;
 }
 
 aside img {
@@ -55,13 +81,18 @@ aside img {
 
 aside h2 {
     position: absolute;
-    top: 47px;
-    left: 150px;
+    top: 40px;
+    left: 85px;
     margin: 0;
+
+}
+
+h2 {
+    display: block;
 }
 
 main img {
-    width: 200px;
+    width: 100px;
     height: auto;
     border: 1px solid steelblue;
     padding: 2px;
@@ -85,4 +116,11 @@ footer {
     padding: 1rem;
     background-color: #ddd;
     color: #000;
+}
+
+header,
+.grid,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
 }
