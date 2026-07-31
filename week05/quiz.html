@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Quiz Form | WDD 130</title>
+    <meta name="description" content="Apoue Raoul Kouadio, web programming student, BYUI-WDD130">
+    <meta name="author" content="Apoue Raoul Kouadio">
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>☑ Basic HTML and CSS Quiz</h1>
+        <form>
+            <fieldset>
+                <legend>1. What does the acronym CSS stand for?</legend>
+                <input type="text" id="q1" name="q1" required>
+            </fieldset>
+            <fieldset>
+                <legend>2. How are id and class attributes selected in CSS?</legend>
+                <textarea id="q2" name="q2" rows="4" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>3. Which of the following is a valid CSS comment?</legend>
+                <select id="q3" name="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="a">A. &lt;!-- This is a comment --&gt;</option>
+                    <option value="b">B. /* This is a comment */</option>
+                    <option value="c">C. //This is a comment</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>4. What is the bottom margin given this declaration? </legend>
+                <code>margin: 10px 5px 15px;</code>
+                <input type="number" id="q4" name="q4" required>
+            </fieldset>
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy;2026 | Basic HTML and CSS Quiz | Apoue Raoul Kouadio</p>
+    </footer>
+</body>
+
+</html>
