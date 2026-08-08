@@ -1,31 +1,37 @@
-/* === Root Variables === */
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
 :root {
     --primary-color: #055a05;
-    /*forest green */
     --secondary-color: #f4a261;
-    /* warm sand */
     --accent1-color: #264653;
-    /* dark slate blue */
     --accent2-color: #e9c46a;
-    /* light golden yellow */
-    --heading-font: "Times New Roman", "Georgia", serif;
+
+    --heading-font: "Times New Roman", Georgia, serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* === Universal Reset === */
+/* =========================================================
+   UNIVERSAL RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* === General Body & Layout === */
+/* =========================================================
+   GENERAL
+========================================================= */
+
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    line-height: 1.6;
 }
 
-/* Use max-width for a responsive layout */
 header,
 main,
 footer {
@@ -34,136 +40,529 @@ footer {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-p,
-section {
+p {
     padding: 8px;
 }
 
-/* === Header & Navigation === */
+img {
+    max-width: 100%;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+========================================================= */
+
 header {
     background-color: var(--primary-color);
-    color: var(--accent2-color);
+    color: white;
 }
 
 header nav {
+    min-height: 90px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+
+    padding: 1rem 1.5rem;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    /* Space between links */
-}
-
-header nav a {
-    color: var(--accent2-color);
-    text-decoration: none;
-    padding: 0.5rem;
-}
-
-header nav a:hover {
-    background-color: var(--accent1-color);
-    color: var(--accent2-color);
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 50px;
+#logo img {
+    display: block;
+    width: 70px;
     height: auto;
 }
 
-/* === Hero Section === */
+.navigation {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+.navigation a {
+    display: block;
+
+    color: white;
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 0.6rem 0.8rem;
+
+    border-radius: 4px;
+
+    transition: 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+}
+
+/* =========================================================
+   HOME PAGE - HERO
+========================================================= */
+
 .hero {
     position: relative;
+    overflow: hidden;
 }
 
-.hero img {
+.hero > img {
     display: block;
+
     width: 100%;
+    height: 450px;
+
+    object-fit: cover;
 }
 
-h1 {
+.hero h1 {
     position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff;
 
+    top: 20px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 1rem;
+
+    text-align: center;
+
+    background-color: rgba(38, 70, 83, 0.85);
+
+    color: white;
+
+    opacity: 1;
 }
+
+/* =========================================================
+   ABOUT PAGE - HERO ARTICLE
+========================================================= */
 
 .hero article {
     position: absolute;
-    background-color: var(--secondary-color);
-    padding: 20px;
-    margin: 20px;
-    top: 100px;
 
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    width: 85%;
+    max-width: 700px;
+
+    padding: 1.5rem;
+
+    background-color: rgba(244, 162, 97, 0.95);
+
+    color: var(--accent1-color);
 }
 
 .hero article img {
     float: right;
+
     width: 125px;
+
+    margin-left: 1rem;
+}
+
+/* =========================================================
+   HOME - HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+    max-width: 650px;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    background-color: rgba(38, 70, 83, 0.9);
+
+    color: white;
+}
+
+.hero-content h1 {
+    position: static;
+
+    width: auto;
+
+    padding: 0;
+    margin-bottom: 1rem;
+
+    background-color: transparent;
+
+    color: white;
+}
+
+.hero-content p {
+    margin-bottom: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 0.8rem 1.5rem;
+
+    background-color: var(--secondary-color);
+
+    color: var(--accent1-color);
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--accent2-color);
+}
+
+/* =========================================================
+   HOME - ABOUT PREVIEW
+========================================================= */
+
+.about-preview {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    padding: 3rem 1rem;
+}
+
+.about-content {
+    padding: 1rem;
+}
+
+.about-content h2 {
+    margin-bottom: 1rem;
+
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}
+
+.about-preview > img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+}
+
+/* =========================================================
+   HOME - FEATURED TRIPS
+========================================================= */
+
+.featured-trips {
+    padding: 3rem 1rem;
+
+    text-align: center;
+}
+
+.featured-trips h2 {
+    margin-bottom: 1rem;
+}
+
+.featured-trips > p {
+    max-width: 600px;
+
+    margin: 0 auto 2rem;
+}
+
+/* =========================================================
+TRIP CARDS
+HOME + TRIPS
+========================================================= */
+
+/* Grid layout for Home and Trips */
+
+.trip-container,
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Common card style */
+
+.trip-container .trip-card,
+.trips-grid .trip-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
 
 }
 
-/* === Page Specific Sections === */
+/* Card hover */
+
+.trip-container .trip-card:hover,
+.trips-grid .trip-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+
+}
+
+/* Card images */
+
+.trip-container .trip-card img,
+.trips-grid .trip-card img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+}
+
+/* Card titles */
+
+.trip-container .trip-card h3,
+.trips-grid .trip-card h3 {
+    margin: 1rem 1rem 0.5rem;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+
+    font-size: 1.4rem;
+
+}
+
+/* Card paragraphs */
+
+.trip-container .trip-card p,
+.trips-grid .trip-card p {
+    margin: 0.25rem 1rem;
+
+    padding: 0;
+
+}
+
+/* Card buttons */
+
+.trip-container .trip-card .button,
+.trips-grid .trip-card .button {
+    display: block;
+
+    margin: 1rem;
+    margin-top: auto;
+
+    padding: 0.75rem 1rem;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+
+}
+
+/* Button hover */
+
+.trip-container .trip-card .button:hover,
+.trips-grid .trip-card .button:hover {
+    background-color: var(--accent1-color);
+}
+
+/* =========================================================
+RESPONSIVE - HOME + TRIPS
+========================================================= */
+
+/* =========================================================
+   HOME - NEWSLETTER
+========================================================= */
+
+.newsletter {
+    margin: 3rem 1rem;
+
+    padding: 2.5rem 1.5rem;
+
+    text-align: center;
+
+    background-color: var(--accent1-color);
+
+    color: white;
+}
+
+.newsletter h2 {
+    color: var(--accent2-color);
+
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    max-width: 600px;
+
+    margin: 0 auto 1.5rem;
+}
+
+.newsletter form {
+    display: flex;
+
+    justify-content: center;
+    align-items: end;
+
+    gap: 0.75rem;
+
+    flex-wrap: wrap;
+}
+
+.newsletter label {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+    font-weight: bold;
+}
+
+.newsletter input[type="email"] {
+    width: 280px;
+
+    padding: 0.8rem;
+
+    border: 1px solid #ccc;
+
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border: none;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent1-color);
+}
+
+.newsletter button {
+    background-color: var(--secondary-color);
+
+    color: var(--accent1-color);
+
+    font-weight: bold;
+}
+
+.newsletter button:hover {
+    background-color: var(--accent2-color);
+}
+
+/* =========================================================
+   ABOUT PAGE - HISTORY
+========================================================= */
+
 .history {
     display: grid;
+
     grid-template-columns: 1fr auto 1fr;
-    /* 3 columns: paragraph, image, paragraph */
+
     align-items: center;
+
     gap: 2rem;
+
     margin: 2rem 0;
+
+    padding: 1rem;
 }
 
 .history h2 {
     grid-column: 1 / -1;
 
     text-align: center;
+
     margin-bottom: 1rem;
 }
 
-.history p:nth-of-type(1) {
-    grid-column: 1 / 2;
-}
-
 .history figure {
-    grid-column: 2 / 3;
     margin: 0;
-
 }
 
 .history figure img {
     width: 250px;
+
     height: auto;
 }
 
+/* =========================================================
+   ABOUT PAGE - ADVENTURES
+========================================================= */
+
 .adventures {
     display: grid;
-    /* Create 5 equal columns that will fit on one line */
+
     grid-template-columns: repeat(5, 1fr);
+
     gap: 1rem;
+
+    padding: 2rem 1rem;
 }
 
 .adventures h2 {
     grid-column: 1 / -1;
-    /* Make the title span all 5 columns */
+
     text-align: center;
+
+    margin-bottom: 1rem;
 }
 
 .adventures figure {
@@ -172,72 +571,87 @@ h1 {
 
 .adventures img {
     width: 100%;
-    height: auto;
+
+    height: 150px;
+
+    object-fit: cover;
+
     border: 1px solid var(--accent1-color);
 }
 
-/* === Footer === */
-footer {
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+.adventures figcaption {
+    padding-top: 0.5rem;
 }
 
-.socialmedia {
-    display: flex;
-    gap: 1rem;
-}
-
-/* =======================================================
+/* =========================================================
    CONTACT PAGE
-======================================================= */
+========================================================= */
 
 .contact-info {
     text-align: center;
+
     margin: 2rem 0;
 }
 
 .contact-info h1 {
     position: static;
+
     background: none;
+
     color: var(--primary-color);
+
     opacity: 1;
+
     padding: 0;
+
     margin-bottom: 1rem;
 }
 
 .contact-info p {
-    margin: .3rem 0;
+    margin: 0.3rem 0;
 }
 
-/* Contact Section */
+/* =========================================================
+   CONTACT - MAP + FORM
+========================================================= */
 
 .contact-container {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 2rem;
+
     margin: 2rem 0;
+
+    padding: 1rem;
+
     align-items: start;
 }
 
 .map iframe {
     width: 100%;
+
     height: 400px;
+
     border: 2px solid var(--accent1-color);
 }
 
-/* Form */
+/* =========================================================
+   CONTACT - FORM
+========================================================= */
 
 .contact-form {
-    background-color: #f5f5f5;
     padding: 1.5rem;
+
+    background-color: #f5f5f5;
+
     border: 1px solid #ddd;
 }
 
 .contact-form form {
     display: grid;
+
     gap: 1rem;
 }
 
@@ -246,7 +660,8 @@ footer {
 }
 
 .form-item label {
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
+
     font-weight: bold;
 }
 
@@ -254,9 +669,13 @@ footer {
 .contact-form input[type="email"],
 .contact-form textarea {
     width: 100%;
-    padding: .7rem;
+
+    padding: 0.7rem;
+
     border: 1px solid #ccc;
+
     font-size: 1rem;
+
     font-family: var(--body-font);
 }
 
@@ -266,43 +685,43 @@ footer {
 
 fieldset {
     border: 1px solid #ccc;
+
     padding: 1rem;
 }
 
 legend {
     font-weight: bold;
-    padding: 0 .5rem;
+
+    padding: 0 0.5rem;
 }
 
 fieldset label {
     display: block;
-    margin: .6rem 0;
+
+    margin: 0.6rem 0;
 }
 
-.newsletter {
+/* Newsletter checkbox on Contact page */
+
+.newsletter-checkbox {
     display: flex;
+
     align-items: center;
-    gap: .5rem;
+
+    gap: 0.5rem;
+
+    font-size: 0.95rem;
 }
 
-button {
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: .3s;
-}
-
-button:hover {
-    background-color: var(--accent1-color);
-}
-
-/* Employees */
+/* =========================================================
+   CONTACT - EMPLOYEES
+========================================================= */
 
 .employees {
     margin: 3rem 0;
+
+    padding: 1rem;
+
     text-align: center;
 }
 
@@ -312,36 +731,465 @@ button:hover {
 
 .employee-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 2rem;
 }
 
 .employee-grid figure {
-    border: 1px solid #ddd;
     padding: 1rem;
+
+    border: 1px solid #ddd;
 }
 
 .employee-grid img {
     width: 100%;
+
     height: 220px;
+
     object-fit: cover;
 }
 
 .employee-grid figcaption {
-    margin-top: .75rem;
+    margin-top: 0.75rem;
+
     font-weight: bold;
+}
+
+/* =========================================================
+TRIPS PAGE - INTRO
+========================================================= */
+
+.trips-intro {
+    padding: 5rem 1.5rem;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(rgba(38, 70, 83, 0.70),
+            rgba(38, 70, 83, 0.70)),
+        url("../images/rafting59_600.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+}
+
+.trips-intro h1 {
+    position: static;
+
+    width: auto;
+
+    padding: 0;
+    margin-bottom: 1rem;
+
+    background: none;
+
+    color: white;
+
+    opacity: 1;
+
+    font-size: 2.5rem;
+
+}
+
+.trips-intro p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: white;
+
+    font-size: 1.05rem;
+
+}
+
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
+
+.why-choose-us {
+    padding: 3rem 1.5rem;
+
+    text-align: center;
+
+    background-color: #f5f5f5;
+}
+
+.why-choose-us h2 {
+    margin-bottom: 2rem;
+}
+
+.benefits {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+.benefits article {
+    padding: 1.5rem;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.benefits h3 {
+    margin-bottom: 0.75rem;
+
+    color: var(--primary-color);
+
+    font-family: var(--heading-font);
+}
+
+.benefits p {
+    padding: 0;
 }
 
 /* Responsive */
 
 @media (max-width: 768px) {
 
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   TRIPS PAGE - CALL TO ACTION
+========================================================= */
+
+.trips-cta {
+    padding: 4rem 1.5rem;
+
+    margin: 3rem 1.5rem;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(rgba(5, 90, 5, 0.75),
+            rgba(5, 90, 5, 0.75)),
+        url("../images/rafting4_600.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    border-radius: 8px;
+}
+
+.trips-cta h2 {
+    margin-bottom: 1rem;
+
+    color: white;
+
+    font-size: 2rem;
+}
+
+.trips-cta p {
+    max-width: 650px;
+
+    margin: 0 auto 1.5rem;
+
+    color: white;
+}
+
+.trips-cta .button {
+    display: inline-block;
+
+    padding: 0.8rem 1.5rem;
+
+    background-color: var(--accent2-color);
+
+    color: var(--accent1-color);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease;
+}
+
+.trips-cta .button:hover {
+    background-color: var(--secondary-color);
+
+    color: var(--accent1-color);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .trips-cta {
+        margin: 2rem 1rem;
+
+        padding: 3rem 1rem;
+    }
+
+    .trips-cta h2 {
+        font-size: 1.6rem;
+    }
+
+}
+
+/* =========================================================
+   TRIPS LIST
+========================================================= */
+
+.trips-list {
+    padding: 3rem 1.5rem;
+}
+
+.trips-list h2 {
+    width: 100%;
+    margin: 0 0 2rem;
+
+    text-align: center;
+
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* =========================================================
+TRIPS LIST - RESPONSIVE
+========================================================= */
+
+/* =========================================================
+TRIPS PAGE - INTRO RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .trips-intro {
+        padding: 4rem 1rem;
+    }
+
+    .trips-intro h1 {
+        font-size: 2rem;
+    }
+
+    .trips-intro p {
+        font-size: 0.95rem;
+    }
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1.5rem;
+
+    padding: 2rem 1rem;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    flex-wrap: wrap;
+}
+
+footer p {
+    padding: 0;
+}
+
+footer nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+}
+
+footer nav a {
+    color: white;
+
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    color: var(--accent2-color);
+}
+
+.socialmedia {
+    display: flex;
+
+    gap: 1rem;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    header nav {
+        flex-direction: column;
+
+        gap: 1rem;
+
+        padding: 1rem;
+    }
+
+    .navigation {
+        flex-direction: column;
+
+        gap: 0.5rem;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    /* Hero */
+
+    .hero > img {
+        height: 350px;
+    }
+
+    .hero-content {
+        width: 90%;
+
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero article {
+        width: 90%;
+
+        padding: 1rem;
+    }
+
+    .hero article img {
+        width: 90px;
+    }
+
+    /* About Preview */
+
+    .about-preview {
+        grid-template-columns: 1fr;
+    }
+
+    /* Featured Trips */
+
+    .trip-container {
+        /* This rule is now combined with .trips-grid below */
+        grid-template-columns: 1fr; 
+    }
+
+    /* History */
+
+    .history {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .history h2 {
+        grid-column: 1;
+    }
+
+    .history figure {
+        order: 2;
+    }
+
+    .history figure img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Adventures */
+
+    .adventures {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Contact */
+
     .contact-container {
         grid-template-columns: 1fr;
     }
+
+    /* Employees */
 
     .employee-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Newsletter */
+
+    .newsletter form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+    }
+
+    .newsletter button {
+        width: 100%;
+    }
+
+    /* Footer */
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    footer nav {
+        flex-direction: column;
+    }
+
+    .socialmedia {
+        flex-direction: row;
+    }
+
+    /* Combined responsive rules for trips */
+    .trip-container,
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
+    .trips-list {
+        padding: 2rem 1rem;
+    }
 }
